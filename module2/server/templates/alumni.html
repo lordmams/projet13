@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni List</title>
+</head>
+<body>
+    <h1>Alumni List</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Academic Year</th>
+        </tr>
+        {% for alum in alumni %}
+        <tr>
+            <td>{{ alum.id }}</td>
+            <td>{{ alum.nom }}</td>
+            <td>{{ alum.specialite }}</td>
+            <td>{{ alum.annee_academique }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

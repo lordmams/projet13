@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <h2>Add Student</h2>
+    <form method="POST" action="/add">
+        <input type="text" name="nom" placeholder="Name" required>
+        <input type="text" name="specialite" placeholder="Specialty" required>
+        <input type="text" name="annee_academique" placeholder="Academic Year" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Students</h2>
+    <ul>
+        {% for student in etudiants %}
+        <li>
+            {{ student[1] }} - {{ student[2] }} - {{ student[3] }}
+            <form method="POST" action="/delete/{{ student[0] }}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
